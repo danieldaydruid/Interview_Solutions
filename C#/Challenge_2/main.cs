@@ -1,7 +1,7 @@
 using System;
 namespace QuestionOne
 {
-    class Hello 
+    class Start 
     {
         static void Main() 
         {
