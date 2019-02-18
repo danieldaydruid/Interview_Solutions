@@ -10,7 +10,7 @@ Bonus: Can you do this in one pass?
 
 def main():
     init = input("Size of array: ")
-    checksum = input("Sum of 2 integers to look for: ")
+    checksum = input("Sum of 2 integers to find: ")
     my_list = [init + (i+1) for i in range(10)]
     for j in range(len(my_list)):
         if((checksum - my_list[j]) in my_list):
