@@ -5,15 +5,18 @@
 #include <algorithm>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
 
 class RangeFilter {
-    float m_minRange;
-    float m_maxRange;
+    float MinimumRange;
+    float MaximumRange;
+    size_t N;    
 public:
-    RangeFilter(float min_range, float max_range)
-        : m_minRange (min_range)
-        , m_maxRange (max_range)
+    RangeFilter(float Min, float Max, size_t NumElements)
+        : MinimumRange(Min)
+        , MaximumRange(Max)
+        , N(NumElements)
     {}
-    float* Update(float *start_array, size_t N);
+    float* Update(float *Scan);
 };

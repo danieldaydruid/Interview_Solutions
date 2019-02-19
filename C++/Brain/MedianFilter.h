@@ -3,18 +3,18 @@
 
 class MedianFilter {
     const size_t N, D;
-    std::vector<float*> m_history;
+    std::vector<float*> HistoryVector;
 public:
     MedianFilter(size_t N, size_t D)
         : N (N)
         , D (D)
-        , m_history()
+        , HistoryVector()
     {}
     ~MedianFilter() {
-        for(auto ptr : m_history) {
+        for(auto ptr : HistoryVector) {
             delete ptr;
         }
     }
 
-    float* Update(float *start_array);
+    float* Update(float *Scan);
 };
