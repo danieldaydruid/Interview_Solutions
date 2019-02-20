@@ -4,7 +4,7 @@
 * Function Name: Preface()                                                      *
 * Function Purpose: Prints a brief preface/introduction of the software to      *
 *                   terminal.                                                   *
-* Last-Modified Log: February 18, 2019                                          *
+* Last-Modified Log: February 19, 2019                                          *
 * Notes: Working as Intended - Matthew Killoran                                 *
 *                                                                               *
 ********************************************************************************/
@@ -23,7 +23,7 @@ void Test::Preface() {
 void Test::TestInitialize(std::string TestName) {
     if(TestName == "Base Scan Case") {
         size_t S = 5, N = 5, D = 3;
-        float Scan[S][N] = {
+        float Scan[5][5] = {
             {0., 1., 2., 1., 3.},
             {1., 5., 7., 1., 3.},
             {2., 3., 4., 1., 0.},
@@ -43,8 +43,8 @@ void Test::TestInitialize(std::string TestName) {
             PrintArray(FilteredRangeArray, N, "Range Filter", i);
             PrintArray(FilteredMedianArray, N, "Median Filter", i);
             std::cout << std::endl;
-            delete FilteredRangeArray;
-            delete FilteredMedianArray;
+            delete[] FilteredRangeArray;
+            delete[] FilteredMedianArray;
         }
         std::cout << "... Complete" << std::endl << std::endl;
         return;
@@ -109,8 +109,8 @@ void Test::RunTest(size_t S, size_t N, size_t D, std::string TestName) {
             PrintArray(FilteredMedianArray, N, "Median Filter", i);
             std::cout << std::endl;
         }
-        delete FilteredRangeArray;
-        delete FilteredMedianArray;
+        delete[] FilteredRangeArray;
+        delete[] FilteredMedianArray;
     }
 }
 /********************************************************************************

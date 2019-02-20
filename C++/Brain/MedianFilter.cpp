@@ -22,7 +22,7 @@ float* MedianFilter::Update(float *Scan) {
             FilteredArray[i] = TemporaryArray[S/2];
         }
     }
-    delete TemporaryArray;  
+    delete[] TemporaryArray;  
     // Add into History
     float* CopyArray = new float[N];
     memcpy(CopyArray, Scan, sizeof(float) * N);
@@ -30,7 +30,7 @@ float* MedianFilter::Update(float *Scan) {
     if(HistoryVector.size() > D) {
         CopyArray = *HistoryVector.begin();
         HistoryVector.erase(HistoryVector.begin());
-        delete CopyArray;
+        delete[] CopyArray;
     }
     return FilteredArray;
 }
