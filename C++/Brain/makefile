@@ -1,4 +1,4 @@
-all: program
+all: LidarFilter
 
-program: main.o Test.o MedianFilter.o RangeFilter.o
+LidarFilter: main.o Test.o MedianFilter.o RangeFilter.o
 	g++ $^ -std=c++11 -O2 -o $@
