@@ -12,23 +12,23 @@
 *                                                                               *
 ********************************************************************************/
 float* RangeFilter::Update(float *Scan) {
-    if(Scan == NULL || N == 0) {
+    if(Scan == NULL || N == 0) { //Checks for a NULL LIDAR Scan array, returns NULL if true
         return NULL;
     }    
-    float *CopyArray = new float[N];
-    if(CopyArray == NULL) {
+    float *FilteredArray = new float[N]; //Allocates a float array of the requisite size to accept LIDAR scan elements
+    if(FilteredArray == NULL) { //Checks whether a NULL array was created, and returns NULL if true
         return NULL;
     }
-    for(size_t i = 0; i < N; i++) {
+    for(size_t i = 0; i < N; i++) { //Loop through the LIDAR Scan array checking for minimum and maximum range measurement violations
         if(Scan[i] < MinimumRange) {
-            CopyArray[i] = MinimumRange;
+            FilteredArray[i] = MinimumRange; //Replaces minimum range violations if found
         }
         else if(Scan[i] > MaximumRange) {
-            CopyArray[i] = MaximumRange;
+            FilteredArray[i] = MaximumRange; //Replaces maximum range violations if found
         }
         else {
-            CopyArray[i] = Scan[i];
+            FilteredArray[i] = Scan[i]; //If no range violations are detected, the value is accepted into the FilteredArray
         }
     }
-    return CopyArray;
+    return FilteredArray;
 }

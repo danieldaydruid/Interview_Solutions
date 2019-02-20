@@ -20,14 +20,15 @@
 *                                                                               *
 ********************************************************************************/
 class RangeFilter {
-    float MinimumRange;
+    float MinimumRange; //Minimum, maximum filter range and number of scan elements set on object initialization
     float MaximumRange;
     size_t N;    
 public:
-    RangeFilter(float Min, float Max, size_t NumElements)
+    RangeFilter(float Min, float Max, size_t NumElements) //Overloaded constructor
         : MinimumRange(Min)
         , MaximumRange(Max)
         , N(NumElements)
     {}
     float* Update(float *Scan);
+    ~RangeFilter(){}
 };

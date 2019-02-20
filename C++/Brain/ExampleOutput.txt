@@ -5,14 +5,14 @@ The software currently running provides several filter applications for LIDAR ap
 including range and temporal median filters.
 
 Large Scan Value Case: S = 439, N = 620, D =  24
-... Complete
+... Success
 
 Random Scan Case: S = 275, N = 88, D =  20
-... Complete
+... Success
 
 NULL Case: S = 485, N = 970, D =  38
 Passed array was empty.
-... Complete
+... Success
 
 Base Scan Case: S = 5, N = 5, D =  3
 LIDAR Scan[0]
@@ -50,7 +50,7 @@ Range Filter[4]
 Median Filter[4]
     2.50    3.00    4.00    1.00    1.50
 
-... Complete
+... Success
 
 Random Scan Case: S = 20, N = 20, D =  16
 LIDAR Scan[0]
@@ -193,4 +193,4 @@ Range Filter[19]
 Median Filter[19]
    32.82   37.95   28.36   23.86   25.66   23.83   14.66   11.81   25.03   25.95    6.00   23.00   32.45   20.91   23.44   28.43   29.90   22.38   23.34   23.52
 
-... Complete
+... Success

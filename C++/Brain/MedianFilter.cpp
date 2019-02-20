@@ -15,36 +15,34 @@
 *                                                                               *
 ********************************************************************************/
 float* MedianFilter::Update(float *Scan) {
-    size_t S = HistoryVector.size() + 1;
-    float *FilteredArray = new float[N];
-    float *TemporaryArray = new float[D + 1]; // Room for D history scans and the current value
-    if(Scan == NULL) {
+    size_t S = HistoryVector.size() + 1; //Sets total number of LIDAR scans to S
+    float *FilteredArray = new float[N]; //Allocates memory for float array of size N
+    float *CheckArray = new float[D + 1]; // Allocates memory for D history scans and the current value
+    if(Scan == NULL) { //Checks for a NULL LIDAR scan, returns NULL and a message if true
         std::cout << "Passed array was empty." << std::endl;
         return NULL;
     }
-    for(size_t i = 0; i < N; i++) {
+    for(size_t i = 0; i < N; i++) { //Loop to populate CheckArray with History Vector values for median computation
         for(size_t j = 0; j < S - 1; j++) {
-            TemporaryArray[j] = HistoryVector[j][i];
+            CheckArray[j] = HistoryVector[j][i];
         }
-        TemporaryArray[S - 1] = Scan[i];
-        // Sort values to get meidan
-        std::sort(TemporaryArray, TemporaryArray + S); //Sorts by ascending order by default, which  is ideal for this case
-        if(S % 2 == 0) {
-            FilteredArray[i] = ((TemporaryArray[(S/2) - 1] + TemporaryArray[S/2]) * 0.5);
+        CheckArray[S - 1] = Scan[i]; //Sets the secnod-to-last CheckArray value as the most recent LIDAR scan for median computation
+        std::sort(CheckArray, CheckArray + S); //Sorts history/scan values in ascending order
+        if(S % 2 == 0) { //Computes median for even number of elements
+            FilteredArray[i] = ((CheckArray[(S/2) - 1] + CheckArray[S/2]) * 0.5);
         }
-        else {
-            FilteredArray[i] = TemporaryArray[S/2];
+        else { //Computes median for odd number of elements
+            FilteredArray[i] = CheckArray[S/2];
         }
     }
-    delete[] TemporaryArray;  
-    // Add into History
-    float* CopyArray = new float[N];
-    memcpy(CopyArray, Scan, sizeof(float) * N);
-    HistoryVector.push_back(CopyArray);
-    if(HistoryVector.size() > D) {
-        CopyArray = *HistoryVector.begin();
-        HistoryVector.erase(HistoryVector.begin());
-        delete[] CopyArray;
+    delete[] CheckArray; //Deletes the temporary CheckArray, frees memory
+    float* CopyArray = new float[N]; //Allocates memory for a new float vector of size N
+    memcpy(CopyArray, Scan, sizeof(float) * N);  // Add most recent LIDAR scan into CopyArray for HistoryVector inclusion
+    HistoryVector.push_back(CopyArray); //Adds most recent LIDAR scan to the HistoryVector
+    if(HistoryVector.size() > D) { //Checks that the size of the HistoryVector has exceeded D, or, current history lookback limit...
+        CopyArray = *HistoryVector.begin(); //Stores the oldest HistoryVector element in CopyArray
+        HistoryVector.erase(HistoryVector.begin()); //Deletes the oldest HistoryVector element
+        delete[] CopyArray; //Deletes the temporary CopyArray, frees memory
     }
-    return FilteredArray;
+    return FilteredArray; //Return the median filtered array
 }
