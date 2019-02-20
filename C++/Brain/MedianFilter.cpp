@@ -1,5 +1,19 @@
 #include "MedianFilter.h"
 
+/********************************************************************************
+* Class Name:       MedianFilter                                                *
+* Function Name:    Update()                                                    *
+* Function Purpose: Filters the LIDAR scans Temporal Median values. Computes    *
+*                   the median value wtih a minimum of 3 history arrays at a    *
+*                   time, though during testing this value is random and can    *
+*                   range up to 50. The software can handle D values much       *
+*                   higher than 50, though an increasing D value increases      *
+*                   execution time substantially, and so was kept lower for     *
+*                   demonstration purposes.                                     *
+* Last-Modified Log: February 19, 2019                                          *
+* Notes: Working as Intended - Matthew Killoran                                 *
+*                                                                               *
+********************************************************************************/
 float* MedianFilter::Update(float *Scan) {
     size_t S = HistoryVector.size() + 1;
     float *FilteredArray = new float[N];

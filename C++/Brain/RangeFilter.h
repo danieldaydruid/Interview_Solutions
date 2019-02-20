@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -8,6 +9,16 @@
 #include <math.h>
 #include <time.h>
 
+/********************************************************************************
+* Class Name:       RangeFilter                                                 *
+* Function Purpose: Contains all Range Filter methods to filter LIDAR scans.    *
+*                   All values filtered based on a minimum and a maximum        *
+*                   threshold. In this case the program will use the prompt-    *
+*                   assigned values, 0.03(minimum) and 50.0 (maximum).          *
+* Last-Modified Log: February 19, 2019                                          *
+* Notes: Working as Intended - Matthew Killoran                                 *
+*                                                                               *
+********************************************************************************/
 class RangeFilter {
     float MinimumRange;
     float MaximumRange;
