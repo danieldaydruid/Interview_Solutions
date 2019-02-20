@@ -1,7 +1,7 @@
 Matthew Killoran - Brain Corp Code Sample
 February 19, 2019
 LIDAR Filters
-The software currently running provides several filter applications for LIDAR application
+The software currently running provides several filter applications for LIDAR sensor application
 including range and temporal median filters.
 
 Large Scan Value Case: S = 439, N = 620, D =  24

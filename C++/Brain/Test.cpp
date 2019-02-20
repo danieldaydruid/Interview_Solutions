@@ -10,7 +10,7 @@
 *                                                                               *
 ********************************************************************************/
 void Test::Preface() {
-    std::cout << "Matthew Killoran - Brain Corp Code Sample\nFebruary 19, 2019\nLIDAR Filters\nThis program provides several filter applications for LIDAR application\nincluding range and temporal median filters.\n\n";
+    std::cout << "Matthew Killoran - Brain Corp Code Sample\nFebruary 19, 2019\nLIDAR Filters\nThis program provides several filter applications for LIDAR sensor application\nincluding range and temporal median filters.\n\n";
 }
 /********************************************************************************
 * Class Name:       Test                                                        *
