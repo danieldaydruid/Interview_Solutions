@@ -17,8 +17,22 @@ class MedianFilter:
             else:
                 self.HistoryArray[i].append(Scan[i])
                 self.HistoryArray[i].sort()
-        
-
+            FilteredArray = [self.S][self.N]
+        for j in range(TotalHistory - 1):
+            if(TotalHistory % 2 == 0):
+                    FilteredArray[j] = (self.HistoryArray[j][self.N / 2] + self.HistoryArray[j][(self.N / 2) - 1] * 0.5)
+            else:
+                FilteredArray[j] = self.HistoryArray[j][self.N / 2]
+        return FilteredArray
+Scan1 = [1, 2, 3, 4, 5]
+Scan2 = [6, 7, 8, 9, 10]
+Scan3 = [11, 12, 13, 14, 15]
+d = MedianFilter(1, 1, 1)
+d.Update(Scan1)
+d.Update(Scan2)
+for i in range(5):
+    print d.Update(Scan3)[i]
+'''
 def CreateLIDARScan():
     a = [random.uniform(-1000,1000) for i in range(random.randint(0,1000))]
     print"Printing LIDAR Scan of size ", len(a),":",
@@ -45,3 +59,4 @@ Scan = CreateLIDARScan()
 PrintArray(Scan)
 #Range Filter Scan
 PrintArray(RangeFilter(Scan))
+'''
