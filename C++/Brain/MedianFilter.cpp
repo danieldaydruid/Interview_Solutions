@@ -26,7 +26,7 @@ float* MedianFilter::Update(float *Scan) {
         for(size_t j = 0; j < S - 1; j++) {
             CheckArray[j] = HistoryVector[j][i];
         }
-        CheckArray[S - 1] = Scan[i]; //Sets the secnod-to-last CheckArray value as the most recent LIDAR scan for median computation
+        CheckArray[S - 1] = Scan[i]; //Sets the second-to-last CheckArray value as the most recent LIDAR scan for median computation
         std::sort(CheckArray, CheckArray + S); //Sorts history/scan values in ascending order
         if(S % 2 == 0) { //Computes median for even number of elements
             FilteredArray[i] = ((CheckArray[(S/2) - 1] + CheckArray[S/2]) * 0.5);

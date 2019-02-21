@@ -6,32 +6,36 @@ class MedianFilter:
         self.S = S
         self.N = N
         self.D = D
-        self.HistoryArray = [self.S][self.N]
+        self.HistoryArray = [[0 for x in range(self.S)] for y in range(self.N)] 
     def Update(self, Scan):
         TotalHistory = len(self.HistoryArray) + 1
         for i in range(len(Scan)):
-            if(TotalHistory > self.D - 1):
+            if(TotalHistory - 1 > self.D):
                 del self.HistoryArray[i][-1]
+
                 self.HistoryArray[i].append(Scan[i])
                 self.HistoryArray[i].sort()
             else:
+
                 self.HistoryArray[i].append(Scan[i])
                 self.HistoryArray[i].sort()
-            FilteredArray = [self.S][self.N]
+        FilteredArray = [0 for x in range(self.S)]
         for j in range(TotalHistory - 1):
             if(TotalHistory % 2 == 0):
                     FilteredArray[j] = (self.HistoryArray[j][self.N / 2] + self.HistoryArray[j][(self.N / 2) - 1] * 0.5)
+                    print(self.HistoryArray[j])
             else:
                 FilteredArray[j] = self.HistoryArray[j][self.N / 2]
+                print(self.HistoryArray[j])
         return FilteredArray
 Scan1 = [1, 2, 3, 4, 5]
 Scan2 = [6, 7, 8, 9, 10]
 Scan3 = [11, 12, 13, 14, 15]
-d = MedianFilter(1, 1, 1)
+d = MedianFilter(5, 5, 2)
 d.Update(Scan1)
 d.Update(Scan2)
-for i in range(5):
-    print d.Update(Scan3)[i]
+#for i in range(5):
+#    print d.Update(Scan3)[i]
 '''
 def CreateLIDARScan():
     a = [random.uniform(-1000,1000) for i in range(random.randint(0,1000))]
