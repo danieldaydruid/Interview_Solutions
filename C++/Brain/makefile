@@ -1,4 +1,3 @@
-
 all: LidarFilter
 
 CC = g++
