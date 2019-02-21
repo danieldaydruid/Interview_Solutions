@@ -6,7 +6,18 @@ class MedianFilter:
         self.S = S
         self.N = N
         self.D = D
-        HistoryArray = [self.S][self.N]
+        self.HistoryArray = [self.S][self.N]
+    def Update(self, Scan):
+        TotalHistory = len(self.HistoryArray) + 1
+        for i in range(len(Scan)):
+            if(TotalHistory > self.D - 1):
+                del self.HistoryArray[i][-1]
+                self.HistoryArray[i].append(Scan[i])
+                self.HistoryArray[i].sort()
+            else:
+                self.HistoryArray[i].append(Scan[i])
+                self.HistoryArray[i].sort()
+        
 
 def CreateLIDARScan():
     a = [random.uniform(-1000,1000) for i in range(random.randint(0,1000))]
