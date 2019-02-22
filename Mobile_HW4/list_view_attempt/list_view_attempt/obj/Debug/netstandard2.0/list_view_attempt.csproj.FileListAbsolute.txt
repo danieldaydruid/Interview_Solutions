@@ -1,0 +1,12 @@
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.csprojAssemblyReference.cache
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.csproj.CoreCompileInputs.cache
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.AssemblyInfoInputs.cache
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.AssemblyInfo.cs
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.dll
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/list_view_attempt.pdb
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/bin/Debug/netstandard2.0/list_view_attempt.deps.json
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/bin/Debug/netstandard2.0/list_view_attempt.dll
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/bin/Debug/netstandard2.0/list_view_attempt.pdb
+/Users/killo001/Projects/list_view_attempt/list_view_attempt/obj/Debug/netstandard2.0/XamlC.stamp

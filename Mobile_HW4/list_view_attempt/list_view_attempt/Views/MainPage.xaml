@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:list_view_attempt" xmlns:viewModels="clr-namespace:list_view_attempt.ViewModels;assembly=list_view_attempt" x:Class="list_view_attempt.MainPage">
+
+        <!-- Place new controls here -->
+        <ListView x:Name="CurrencyList"
+                  HasUnevenRows="True"
+                  IsPullToRefreshEnabled="true"
+                  RefreshCommand="{Binding RefreshCommand}"
+                  IsRefreshing="{Binding IsBusy}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                    <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                            
+                                    <Image
+                                        x:Name="Photo"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2"
+                                        Aspect="AspectFit"
+                                        Source="{Binding Image}"
+                                        WidthRequest = "100"
+                                        HeightRequest = "100"
+                                        MinimumHeightRequest = "100"
+                                        MinimumWidthRequest = "100"
+                                        />
+                            
+                                    <Label
+                                        x:Name="Item"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Text="{Binding Name}"
+                                        />
+                                    
+                                    <Label
+                                        x:Name="Pricetag"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{Binding Price}"
+                                        />
+
+                                </Grid>
+                        <!--<StackLayout> -->
+                       <!--     <Label Text="{Binding Name}" /> -->
+                       <!--     <Image Source="{Binding Image}" WidthRequest="70" HeightRequest="50" /> -->
+                       <!--     <Label Text="{Binding Price}" /> -->
+                       <!-- </StackLayout> -->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+             
+                    
+                  
+
+</ContentPage>

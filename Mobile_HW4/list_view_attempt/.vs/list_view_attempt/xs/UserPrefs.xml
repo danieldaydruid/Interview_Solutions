@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{C8714944-7007-4335-96D5-B3C616021D76}|Default">
+  <MonoDevelop.Ide.ItemProperties.list__view__attempt.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.45A1D78E-3146-48AD-944E-DB7366DB9BF8" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="list_view_attempt/Views/MainPage.xaml.cs">
+    <Files>
+      <File FileName="list_view_attempt/Views/MainPage.xaml.cs" Line="22" Column="15" />
+      <File FileName="list_view_attempt/Views/MainPage.xaml" Line="32" Column="15" />
+      <File FileName="list_view_attempt/Models/Product.cs" Line="6" Column="33" />
+      <File FileName="list_view_attempt/ViewModels/ProductsViewModel.cs" Line="29" Column="37" />
+      <File FileName="list_view_attempt/App.xaml" Line="5" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.list__view__attempt.Android PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
