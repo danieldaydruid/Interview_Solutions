@@ -49,7 +49,7 @@ bool CheckArray::Update1(int* Scan, int n) { //Update in nested passes
 	return false;
 }
 
-bool CheckArray::Update2(int* Scan, int n) { //Update in a single pass
+bool CheckArray::Update2(int* Scan, int n) { //Update in single pass
     std::sort(Scan, Scan + N);
 	size_t i = 0, j = N - 1;
     while ( i < j ) {
