@@ -6,7 +6,7 @@
   <p>Before the script...</p>
 
   <script>
-    alert( 'Hello World!' );
+    alert( 'Hello there World!' );
   </script>
 
   <p>...After the script.</p>
