@@ -14,10 +14,13 @@ Bonus: Can you do this in one pass?
 */
 class CheckArray {
 	size_t N;
+	size_t TrackFailures = 0;
 	public:
 		CheckArray(size_t N)
 		: N(N)
 		{}
+		void IncrementFailures();
+		size_t GetFailures();
 		bool Update1(int* Scan, int n);
 		bool Update2(int* Scan, int n);
 		void Print(int* Scan);
@@ -41,23 +44,31 @@ int main() {
 
 bool CheckArray::Update1(int* Scan, int n) { //Update in nested passes
 	for(size_t i = 0; i < N; i++) {
-		for(size_t j = 0; j < N; j++) {
-			if(n - Scan[i] == Scan[j]) return true;
+		for(size_t j = 1; j < N; j++) {
+			//if(n - Scan[i] == Scan[j]) return true;
+			if(Scan[i] + Scan[j] == n) {
+				std::cout << "Found " << n << " with: " << Scan[i] << " + " << Scan[j] << std::endl;
+				return true;
+			} 
 		}
 	}
-	//std::cout << "Failure1!" << std::endl;
+		std::cout << "Update1 did not find " << n << "." << std::endl;
 	return false;
 }
 
 bool CheckArray::Update2(int* Scan, int n) { //Update in single pass
     std::sort(Scan, Scan + N);
-	size_t i = 0, j = N - 1;
+	size_t i = 0, j = N;
     while ( i < j ) {
         if ( Scan[i] + Scan[j] < n ) i++;
         else if ( Scan[i] + Scan[j] > n ) j--;
-        else return true;
+        else {
+			std::cout << "Found " << n << " with: " << Scan[i] << " + " << Scan[j] << std::endl;
+			return true;
+		}
     }
-	//std::cout << "Failure2!" << std::endl;
+	std::cout << "Update2 did not find " << n << "." << std::endl;
+		std::cout << "Last checks: Scan[" << i << "] = " << Scan[i] << " + " << "Scan[" << j << "] = " << Scan[j] << std::endl;
     return false;
 }
 
@@ -69,27 +80,39 @@ void CheckArray::Print(int* Scan) {
 }
 
 void Test::GenerateTests() {
-	size_t S = rand() % 1000, N = rand() % 100;
-	CheckArray compute(N);
+	size_t S = rand() % 100, N = rand() % 100;
+	CheckArray compute(N - 1);
 	for(size_t i = 0; i < S; i++) {
-		int TestArray[N];
+		int* TestArray = new int[N];
 		int n = rand() % 10;
-		std::cout << "Start " << i << "[ ";
-		for(size_t j = 0; j < N - 1; j ++) {
+		std::cout << "Array " << i << "[ ";
+		for(size_t j = 0; j < N; j ++) {
 			TestArray[j] = rand() % 10;
 			std::cout << TestArray[j] << " ";
 		}
-		std::cout << "] End: " << n << std::endl;
+		std::cout << "] Find n = " << n << std::endl;
 		if( compute.Update1(TestArray, n) ) {
 			std::cout << "Update1[" << i << "]:" << n << " found in array of length " << N << "." << std::endl;
+		}
+		else {
+			compute.IncrementFailures();
 		}
 		if( compute.Update2(TestArray, n) ) {
 			std::cout << "Update2[" << i << "]:" << n << " found in array of length " << N << "." << std::endl << std::endl;
 		}
-
-		if( compute.Update1(TestArray, n) && !compute.Update2(TestArray, n) ) {
-			exit(1);
+		else {
+			compute.IncrementFailures();
 		}
 	}
+	std::cout << S << " total tests run with array size " << N << "." << std::endl;
+	std::cout << "Total failures recorded: " << compute.GetFailures() << std::endl;
 	return;
+}
+
+void CheckArray::IncrementFailures() {
+	TrackFailures++;
+	return;
+}
+size_t CheckArray::GetFailures() {
+	return TrackFailures;
 }
