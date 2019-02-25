@@ -1,5 +1,5 @@
 '''
-return a new sorted merged list from K sorted lists, each with size N:
+return a new sorted merged list from K sorted lists, each with size N.
 
 [[10, 15, 30], [12, 15, 20], [17, 20, 32]]
 '''
