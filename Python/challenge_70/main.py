@@ -1,5 +1,5 @@
 '''
-This problem was asked by Microsoft.
+This problem was asked by Microsoft:
 
 A number is considered perfect if its digits sum up to exactly 10.
 
