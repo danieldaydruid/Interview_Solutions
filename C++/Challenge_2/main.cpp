@@ -33,7 +33,7 @@ int main() {
 		}
 		else {
 			Filter.Print( TestArray, "Unfiltered Array" ); //Prints TestArray to be filtered
- 			Filter.Print( Filter.Update(TestArray), "Filtered Array" ); //Prints filtered TestArray
+ 			Filter.Print( Filter.Update(TestArray), "Filtered Array" ); //Prints filtered TestArray 
 			 std::cout << std::endl;
 			n = 0; //Resets n in order that bounds of TestArray are not surpassed in the next loop 
 			i--;
