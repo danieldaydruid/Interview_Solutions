@@ -48,7 +48,7 @@ int* ArrayFilter::Update(int* Input) {
 	for(size_t i = 0; i < N; i ++) { //Nested for loop to check
 		for(size_t j = 0; j < N; j ++) {
 			if(i != j) {
-				FilteredArray[i] *=  Input[j]; //Computes the product of all Input array elements excluding the current Input array element
+				FilteredArray[i] *=  Input[j]; //Computes the product of all Input array elements excluding the current Input array element 
 			}
 		}
 	}
