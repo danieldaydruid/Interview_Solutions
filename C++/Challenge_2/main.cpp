@@ -26,7 +26,7 @@ int main() {
 	int TestArray[5]; //Declares empty base array for testing
 	ArrayFilter Filter((sizeof(TestArray)/sizeof(*TestArray))); //Declares an object of type ArrayFilter with initial filtered array size equal to TestArray's size.
 	size_t n = 0; //Initializes incrementer n to traverse TestArray
-	for(int i = 1; i <= 101; i++) { //For loop to add values into TestArray, 5 values at a time, from 1 to 100 (0 is omitted as products of 0 are not good testing values) 
+	for(int i = 1; i <= 101; i++) { //For loop to add values into TestArray, 5 values at a time, from 1 to 100 (0 is omitted as products of 0 are not good testing values)  
 		if(n < 5) { //Ensures that TestArray's bounds are not surpassed while adding values to TestArray
 			TestArray[n] = i; //Assigns TestArray's nth element to i
 			n++;
