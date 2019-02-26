@@ -42,7 +42,7 @@ int main() {
 	return 0;
 } 
 int* ArrayFilter::Update(int* Input) {
-	if(Input == NULL) return NULL; //Checks for NULL arrays being passed in
+	if(Input == NULL) return NULL; //Checks for NULL arrays being passed in 
 	int* FilteredArray = new int[N]; //Declares a new array of size N for FilteredArray
 	std::fill_n(FilteredArray, N, 1); //Fills FilteredArray with 1s so no zero products occur 
 	for(size_t i = 0; i < N; i ++) { //Nested for loop to check
