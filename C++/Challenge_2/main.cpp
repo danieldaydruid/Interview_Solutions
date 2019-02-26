@@ -15,7 +15,7 @@ Follow-up: what if you can't use division?
 class ArrayFilter {
 	const size_t N;
 	public:
-		ArrayFilter(size_t N) //Overloaded constructor
+		ArrayFilter(size_t N) //Overloaded constructor 
 			:N (N)
 		{}
 		int* Update(int* Input);
