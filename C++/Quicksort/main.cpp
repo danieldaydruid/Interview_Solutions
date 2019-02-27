@@ -40,11 +40,11 @@ int Partition(int Array[], int Low, int High) {
     return (i + 1);
 }
 
-void QuickSort(int Array[], int Low, int High) {
+void QuickSort(int Array[], int Low, int High) { 
     if (Low < High) {
-        int Pi = Partition(Array, Low, High);
-        QuickSort(Array, Low, Pi - 1);
-        QuickSort(Array, Pi + 1, High);
+        int ParIndex = Partition(Array, Low, High);
+        QuickSort(Array, Low, ParIndex - 1);
+        QuickSort(Array, ParIndex + 1, High);
     }
 }
 
