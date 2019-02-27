@@ -13,19 +13,18 @@ int main() {
     int Array[size];
     for (size_t i = 0; i < size; i++) Array[i] = rand() % 100;
     int N = sizeof(Array)/sizeof(Array[0]);
-    std::cout << "Unsorted Array: " << std::endl;
+    std::cout << "Unsorted Array of size " << N << ":" << std::endl;
     PrintArray(Array, N);
     QuickSort(Array, 0, N - 1);
-    std::cout << "Sorted Array: " << std::endl;
+    std::cout << "Sorted Array of size " << N << ":" << std::endl;
     PrintArray(Array, N);
     return 0;
 }
 
 void Swap(int* a, int* b) {
-    int temp = *a;
+    int temp = *a; 
     *a = *b;
     *b = temp;
-    return;
 }
 
 int Partition(int Array[], int Low, int High) {
@@ -47,12 +46,10 @@ void QuickSort(int Array[], int Low, int High) {
         QuickSort(Array, Low, Pi - 1);
         QuickSort(Array, Pi + 1, High);
     }
-    return;
 }
 
 void PrintArray(int Array[], int size) {
     std::cout << "[ ";
     for (int i = 0; i < size; i++) std::cout << Array[i] << " ";
     std::cout << "]" << std::endl;
-    return;
 }
