@@ -40,7 +40,7 @@ void Append(struct Node** head_ref, int new_data) {
 }
 
 int main() {
-    struct Node* head = NULL;
+    struct Node* head = NULL; 
     
     return 0;
 }
