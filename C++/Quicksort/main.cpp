@@ -26,7 +26,7 @@ void Swap(int* a, int* b) {
     *a = *b;
     *b = temp;
 }
- 
+
 int Partition(int Array[], int Low, int High) {
     int pivot = Array[High];
     int i = Low - 1;
