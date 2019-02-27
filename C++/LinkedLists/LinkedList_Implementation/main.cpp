@@ -2,20 +2,19 @@
 #include <stdio.h>
 
 struct Node {
-        Node* Next;
-        int Data;
+        struct Node* next;
+        int data;
 };
 
-class LinkedList {
-    Node *Head, *Tail;
-    public:
-        LinkedList() {
-            Head = NULL;
-            Tail = NULL;
-        }
-};
+void Push(struct Node** head_ref, int new_data) {
+    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+    new_node->data = new_data;
+    new_node->next = (*head_ref);
+    (*head_ref) = new_node;
+}
 
 int main() {
-
+    struct Node* head = NULL;
+    
     return 0;
 }
