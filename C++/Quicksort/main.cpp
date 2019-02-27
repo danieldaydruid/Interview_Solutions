@@ -9,7 +9,7 @@ int main() {
     int Array[] = {10, 7, 8, 9, 1, 5};
     int N = sizeof(Array)/sizeof(Array[0]);
     QuickSort(Array, 0, N - 1);
-    std::cout << "Sorted Array: n";
+    std::cout << "Sorted Array: n" << std::endl;
     PrintArray(Array, N);
     return 0;
 }
@@ -44,7 +44,8 @@ void QuickSort(int Array[], int Low, int High) {
 }
 
 void PrintArray(int Array[], int size) {
-    for (int i = 0; i < size; i++) std::cout << Array[i] << std::endl;
-    std::cout << "N" << std::endl;
+    std::cout << "[ ";
+    for (int i = 0; i < size; i++) std::cout << Array[i] << " ";
+    std::cout << "]" << std::endl << "N" << std::endl;
     return;
 }
