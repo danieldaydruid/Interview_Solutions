@@ -23,12 +23,13 @@ int main() {
 }
 
 std::size_t Power(std::size_t number, int power) {
-    if(power == 0) return 1;
-    else {
+    if(power > 0) {
         std::size_t original_value = number;
         for(auto i = 1; i < power; i++) {
             number *= original_value;
         }
+        return number;
     }
-    return number;
+    else if (power < 0) return -1;
+    else return 1;
 }
