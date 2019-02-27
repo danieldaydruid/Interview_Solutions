@@ -40,7 +40,7 @@ int Partition(int Array[], int Low, int High) {
     return (i + 1);
 }
 
-void QuickSort(int Array[], int Low, int High) { 
+void QuickSort(int Array[], int Low, int High) {
     if (Low < High) {
         int ParIndex = Partition(Array, Low, High);
         QuickSort(Array, Low, ParIndex - 1);
