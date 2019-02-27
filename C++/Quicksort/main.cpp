@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <time.h>
 
 void Swap(int* a, int* b);
 int Partition(int Array[], int Low, int High);
@@ -6,10 +8,15 @@ void QuickSort(int Array[], int Low, int High);
 void PrintArray(int Array[], int size);
 
 int main() {
-    int Array[] = {10, 7, 8, 9, 1, 5};
+    srand(time(NULL));
+    size_t size = rand() % 50;
+    int Array[size];
+    for (size_t i = 0; i < size; i++) Array[i] = rand() % 100;
     int N = sizeof(Array)/sizeof(Array[0]);
+    std::cout << "Unsorted Array: " << std::endl;
+    PrintArray(Array, N);
     QuickSort(Array, 0, N - 1);
-    std::cout << "Sorted Array: n" << std::endl;
+    std::cout << "Sorted Array: " << std::endl;
     PrintArray(Array, N);
     return 0;
 }
@@ -46,6 +53,6 @@ void QuickSort(int Array[], int Low, int High) {
 void PrintArray(int Array[], int size) {
     std::cout << "[ ";
     for (int i = 0; i < size; i++) std::cout << Array[i] << " ";
-    std::cout << "]" << std::endl << "N" << std::endl;
+    std::cout << "]" << std::endl;
     return;
 }
