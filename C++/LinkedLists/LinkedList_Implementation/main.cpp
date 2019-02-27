@@ -1,10 +1,18 @@
 #include <iostream>
 #include <stdio.h>
 
-class Node {
-    public:
+struct Node {
         Node* Next;
         int Data;
+};
+
+class LinkedList {
+    Node *Head, *Tail;
+    public:
+        LinkedList() {
+            Head = NULL;
+            Tail = NULL;
+        }
 };
 
 int main() {
