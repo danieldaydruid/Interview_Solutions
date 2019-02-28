@@ -41,7 +41,7 @@ void Append(struct Node** head_ref, int new_data) {
 
 void PrintList(struct Node *node) {
     while(node != NULL) {
-        std::cout << node->data;
+        std::cout << node->data std::endl;
         node = node->next;
     }
 }
@@ -52,5 +52,9 @@ int main() {
     Push(&head, 7);
     Push(&head, 1);
     Append(&head, 4);
+    InsertAfter(head->next, 8);
+
+    std::cout << "Created linked list is: ") << std::endl;
+    PrintList(head);
     return 0;
 }
