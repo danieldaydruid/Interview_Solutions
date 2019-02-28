@@ -17,7 +17,7 @@ void InsertAfter(struct Node* prev_node, int new_data) {
     if (prev_node == NULL) {
         std::cout << "The given previous Node cannot be NULL" << std::endl;
         return;
-    }
+    } 
     //struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
     struct Node* new_node = new struct Node; //Faster than malloc() because an operator is always faster than a function.
     new_node->data = new_data;
