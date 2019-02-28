@@ -31,7 +31,7 @@ void Append(struct Node** head_ref, int new_data) {
     new_node->data= new_data; 
     new_node->next = NULL;
     if(*head_ref == NULL) { 
-        *head_ref = new_node;
+        *head_ref = new_node; 
         return;
     }
     while (last->next != NULL) last = last->next; //Travel until last node
