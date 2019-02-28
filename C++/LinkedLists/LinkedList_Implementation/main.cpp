@@ -35,7 +35,7 @@ void Append(struct Node** head_ref, int new_data) {
         return;
     }
     while (last->next != NULL) last = last->next; //Travel until last node
-    last->next = new_node; //Change next of the last node 
+    last->next = new_node; //Change next of the last node
     return;
 }
 
