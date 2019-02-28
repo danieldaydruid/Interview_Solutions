@@ -1,32 +1,41 @@
 #include <iostream>
 #include <stdio.h>
 
-//Attempt 1
-
 struct Node {
     struct Node* next;
     int data;
 };
 
-void Push(struct Node** Head, int data) {
-    struct Node* new_node = new struct Node;
-    new_node->data = data;
-    new_node->next = *Head;
-    *Head = new_node;
+class LinkedList {
+    struct Node* Head;
+    public:
+        LinkedList() {
+            Head = NULL;
+        }
+        void Push(int data);
+        void Print();
+};
+
+void LinkedList::Push(int data) {
+    struct Node* temp = new struct Node;
+    temp->data = data;
+    temp->next = Head;
+    Head = temp;
+    return;
 }
 
-void PrintList(struct Node** Head) {
-    struct Node* temp = *Head;
-    while(temp->next != NULL) {
-        std::cout << temp->data << std::endl;
+void LinkedList::Print() {
+    struct Node* temp = Head;
+    while(temp != NULL) {
+        std::cout << temp->data << " ";
         temp = temp->next;
     }
     return;
 }
 
 int main() {
-    struct Node* Head = NULL;
-    Push(&Head, 1);
-    PrintList(&Head);
+    LinkedList LL;
+    for(int i = 0; i < 100; i++) LL.Push(i);
+    LL.Print();
     return 0;
 }
