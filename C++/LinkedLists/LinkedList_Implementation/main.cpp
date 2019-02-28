@@ -48,6 +48,9 @@ void PrintList(struct Node *node) {
 
 int main() {
     struct Node* head = NULL; 
-    
+    Append(&head, 6);
+    Push(&head, 7);
+    Push(&head, 1);
+    Append(&head, 4);
     return 0;
 }
