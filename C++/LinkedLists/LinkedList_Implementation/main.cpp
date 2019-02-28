@@ -24,7 +24,7 @@ void InsertAfter(struct Node* prev_node, int new_data) {
     new_node->next = prev_node->next;
     prev_node->next = new_node;
 }
-
+ 
 void Append(struct Node** head_ref, int new_data) {
     struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
     struct Node *last = *head_ref;
@@ -54,7 +54,7 @@ int main() {
     Append(&head, 4);
     InsertAfter(head->next, 8);
 
-    std::cout << "Created linked list is: ") << std::endl;
+    std::cout << "Created linked list is: " << std::endl;
     PrintList(head);
     return 0;
 }
