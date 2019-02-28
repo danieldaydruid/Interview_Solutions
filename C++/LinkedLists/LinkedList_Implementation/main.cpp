@@ -39,6 +39,13 @@ void Append(struct Node** head_ref, int new_data) {
     return;
 }
 
+void PrintList(struct Node *node) {
+    while(node != NULL) {
+        std::cout << node->data;
+        node = node->next;
+    }
+}
+
 int main() {
     struct Node* head = NULL; 
     
