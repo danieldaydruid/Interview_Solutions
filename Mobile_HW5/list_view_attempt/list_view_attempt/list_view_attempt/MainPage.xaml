@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:list_view_attempt" 
+             x:Class="list_view_attempt.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             >
+    
+    <StackLayout>
+        
+        <ListView x:Name="ProductsListView" >
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions> 
+                                    <Image
+                                        x:Name="productImageLabel"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2"
+                                        Aspect="AspectFit"
+                                        Source="{Binding img_url}"
+                                        WidthRequest = "100"
+                                        HeightRequest = "100"
+                                        MinimumHeightRequest = "100"
+                                        MinimumWidthRequest = "100"
+                                    />
+                                    <Label
+                                        x:Name="producNameLabel"
+                                        Text="{Binding name_of_product}"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="3"
+                                        FontAttributes="Bold"
+                                    />
+                                    <Label
+                                        x:Name="productCodeLabel"
+                                        Text="{Binding code_num}"
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                    />
+                                    <Label
+                                        x:Name="productPriceLabel"
+                                        Text="{Binding price}"
+                                        Grid.Row="0"
+                                        Grid.Column="4"
+                                    />
+                                    <Label
+                                        x:Name="productRatingLabel"
+                                        Text="{Binding star_rating}"
+                                        Grid.Row="0"
+                                        Grid.Column="4"
+                                        HorizontalOptions="End"
+                                    />
+                                    <Label
+                                        x:Name="produceDescriptionLabel"
+                                        Text="{Binding desc}"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="4"
+                                    />
+                                </Grid>
+                            </ViewCell.View>
+                            <ViewCell.ContextActions>
+                                <MenuItem
+                                    Text="More..."
+                                    IsDestructive="True"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="Handle_Clicked"
+                                />
+                        </ViewCell.ContextActions>  
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView> 
+    </StackLayout>
+    
+</ContentPage>
