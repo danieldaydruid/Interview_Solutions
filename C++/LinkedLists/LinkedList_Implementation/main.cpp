@@ -12,7 +12,7 @@ class LinkedList {
         LinkedList() { 
             Head = NULL; 
         } 
-        void Push(int data);
+        void Push(int data); 
         void Print();
         void Delete(int key);
         void Reverse();
