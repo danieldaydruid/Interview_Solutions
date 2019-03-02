@@ -16,7 +16,7 @@ class LinkedList {
         void Print(); 
         void Delete(int key); 
         void Reverse(); 
-};
+}; 
 
 void LinkedList::Push(int data) { 
     Node* temp = new Node;
