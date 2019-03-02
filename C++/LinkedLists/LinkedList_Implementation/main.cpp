@@ -7,7 +7,7 @@ struct Node {
 }; 
  
 class LinkedList { 
-    Node* Head;
+    Node* Head; 
     public:
         LinkedList() {
             Head = NULL; 
