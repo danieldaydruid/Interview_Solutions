@@ -9,7 +9,7 @@ struct Node {
 class LinkedList { 
     Node* Head; 
     public: 
-        LinkedList() {
+        LinkedList() { 
             Head = NULL; 
         }
         void Push(int data);
