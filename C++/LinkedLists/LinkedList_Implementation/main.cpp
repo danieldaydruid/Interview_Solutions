@@ -6,7 +6,7 @@ struct Node {
     int data; 
 }; 
  
-class LinkedList {
+class LinkedList { 
     Node* Head;
     public:
         LinkedList() {
