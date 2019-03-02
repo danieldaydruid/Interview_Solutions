@@ -11,7 +11,7 @@ class LinkedList {
     public: 
         LinkedList() { 
             Head = NULL; 
-        }
+        } 
         void Push(int data);
         void Print();
         void Delete(int key);
