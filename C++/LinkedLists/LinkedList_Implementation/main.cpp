@@ -19,7 +19,7 @@ class LinkedList {
 }; 
  
 void LinkedList::Push(int data) { 
-    Node* temp = new Node;
+    Node* temp = new Node; 
     temp->data = data;
     temp->next = Head;
     Head = temp;
