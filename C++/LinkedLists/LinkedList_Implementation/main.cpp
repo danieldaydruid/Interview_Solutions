@@ -3,7 +3,7 @@
  
 struct Node { 
     struct Node* next; 
-    int data;
+    int data; 
 };
 
 class LinkedList {
