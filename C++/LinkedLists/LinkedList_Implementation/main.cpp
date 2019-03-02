@@ -15,7 +15,7 @@ class LinkedList {
         void Push(int data); 
         void Print(); 
         void Delete(int key); 
-        void Reverse();
+        void Reverse(); 
 };
 
 void LinkedList::Push(int data) { 
