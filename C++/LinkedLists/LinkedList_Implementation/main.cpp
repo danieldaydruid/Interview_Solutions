@@ -5,7 +5,7 @@ struct Node {
     struct Node* next; 
     int data; 
 }; 
-
+ 
 class LinkedList {
     Node* Head;
     public:
