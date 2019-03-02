@@ -10,7 +10,7 @@ class LinkedList {
     Node* Head;
     public:
         LinkedList() {
-            Head = NULL;
+            Head = NULL; 
         }
         void Push(int data);
         void Print();
