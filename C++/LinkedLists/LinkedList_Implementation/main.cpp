@@ -18,7 +18,7 @@ class LinkedList {
         void Reverse();
 };
 
-void LinkedList::Push(int data) {
+void LinkedList::Push(int data) { 
     Node* temp = new Node;
     temp->data = data;
     temp->next = Head;
