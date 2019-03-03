@@ -30,7 +30,7 @@ void LinkedList::Print() {
     Node* temp = Head; 
     while(temp != NULL) {
         std::cout << temp->data << " "; 
-        temp = temp->next;
+        temp = temp->next; 
     }  
     std::cout << std::endl; 
     return; 
