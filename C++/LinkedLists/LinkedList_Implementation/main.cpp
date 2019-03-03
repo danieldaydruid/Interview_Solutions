@@ -24,7 +24,7 @@ void LinkedList::Push(int data) {
     temp->next = Head; 
     Head = temp; 
     return; 
-}
+} 
 
 void LinkedList::Print() {
     Node* temp = Head;
