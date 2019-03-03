@@ -32,7 +32,7 @@ void LinkedList::Print() {
         std::cout << temp->data << " ";
         temp = temp->next;
     }
-    std::cout << std::endl;
+    std::cout << std::endl; 
     return;
 }
 
