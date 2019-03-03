@@ -55,7 +55,7 @@ void LinkedList::Delete(int key) {
 
 void LinkedList::Reverse() {
     Node *current = Head;
-    Node *prev = NULL, *next = NULL;
+    Node *prev = NULL, *next = NULL; 
     while (current != NULL) {
         next = current->next;
         current->next = prev;
