@@ -61,7 +61,7 @@ void LinkedList::Reverse() {
         current->next = prev;
         prev = current;
         current = next;
-    }
+    } 
     Head = prev; 
     return; 
 } 
