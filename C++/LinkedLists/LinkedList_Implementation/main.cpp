@@ -34,7 +34,7 @@ void LinkedList::Print() {
     } 
     std::cout << std::endl; 
     return;
-}
+} 
 
 void LinkedList::Delete(int key) {
     Node* temp = Head, *prev;
