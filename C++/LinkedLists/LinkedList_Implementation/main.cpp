@@ -31,7 +31,7 @@ void LinkedList::Print() {
     while(temp != NULL) { 
         std::cout << temp->data << " ";  
         temp = temp->next; 
-    }  
+    }   
     std::cout << std::endl; 
     return; 
 } 
