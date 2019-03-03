@@ -50,7 +50,7 @@ void LinkedList::Delete(int key) {
     if(temp == NULL) return;
     prev->next = temp->next;
     free(temp);
-    return;
+    return; 
 }
 
 void LinkedList::Reverse() {
