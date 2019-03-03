@@ -33,7 +33,7 @@ void LinkedList::Print() {
         temp = temp->next;
     } 
     std::cout << std::endl; 
-    return;
+    return; 
 } 
  
 void LinkedList::Delete(int key) {  
