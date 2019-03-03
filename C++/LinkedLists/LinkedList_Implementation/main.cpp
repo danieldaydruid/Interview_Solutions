@@ -26,7 +26,7 @@ void LinkedList::Push(int data) {
     return; 
 } 
  
-void LinkedList::Print() {
+void LinkedList::Print() { 
     Node* temp = Head;
     while(temp != NULL) {
         std::cout << temp->data << " ";
