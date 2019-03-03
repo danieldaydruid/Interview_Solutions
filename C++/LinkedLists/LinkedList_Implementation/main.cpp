@@ -39,7 +39,7 @@ void LinkedList::Print() {
 void LinkedList::Delete(int key) { 
     Node* temp = Head, *prev;
     if(temp != NULL && temp->data == key) {
-        Head = temp->next;
+        Head = temp->next; 
         free(temp);
         return;
     }
