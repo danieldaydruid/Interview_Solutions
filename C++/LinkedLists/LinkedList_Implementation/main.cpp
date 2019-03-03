@@ -36,7 +36,7 @@ void LinkedList::Print() {
     return;
 } 
 
-void LinkedList::Delete(int key) { 
+void LinkedList::Delete(int key) {  
     Node* temp = Head, *prev;
     if(temp != NULL && temp->data == key) {
         Head = temp->next; 
