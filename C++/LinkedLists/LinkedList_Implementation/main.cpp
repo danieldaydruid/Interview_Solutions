@@ -23,7 +23,7 @@ void LinkedList::Push(int data) {
     temp->data = data; 
     temp->next = Head; 
     Head = temp; 
-    return;
+    return; 
 }
 
 void LinkedList::Print() {
