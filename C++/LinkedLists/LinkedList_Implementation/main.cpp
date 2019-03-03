@@ -57,7 +57,7 @@ void LinkedList::Reverse() {
     Node *current = Head;
     Node *prev = NULL, *next = NULL; 
     while (current != NULL) {
-        next = current->next;
+        next = current->next; 
         current->next = prev;
         prev = current;
         current = next;
