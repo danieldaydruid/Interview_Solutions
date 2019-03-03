@@ -42,7 +42,7 @@ void LinkedList::Delete(int key) {
         Head = temp->next; 
         free(temp); 
         return;
-    }
+    } 
     while(temp != NULL && temp->data != key) {
         prev = temp;
         temp = temp->next;
