@@ -64,7 +64,7 @@ void LinkedList::Reverse() {
     }
     Head = prev; 
     return; 
-}
+} 
 //Worst Access: O(n), Worst Search: O(n), Worst Insert: O(1), Worst Delete: O(1)
 //Avg Access: O(n), Avg Search: O(n), Avg Insert: O(1), Avg Delete: O(1)
 //Worst Space: O(n)
