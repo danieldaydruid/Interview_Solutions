@@ -29,7 +29,7 @@ void LinkedList::Push(int data) {
 void LinkedList::Print() { 
     Node* temp = Head; 
     while(temp != NULL) {
-        std::cout << temp->data << " "; 
+        std::cout << temp->data << " ";  
         temp = temp->next; 
     }  
     std::cout << std::endl; 
