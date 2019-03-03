@@ -27,7 +27,7 @@ void LinkedList::Push(int data) {
 } 
  
 void LinkedList::Print() { 
-    Node* temp = Head;
+    Node* temp = Head; 
     while(temp != NULL) {
         std::cout << temp->data << " ";
         temp = temp->next;
