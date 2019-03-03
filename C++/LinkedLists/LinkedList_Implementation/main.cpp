@@ -41,7 +41,7 @@ void LinkedList::Delete(int key) {
     if(temp != NULL && temp->data == key) {
         Head = temp->next; 
         free(temp); 
-        return;
+        return; 
     } 
     while(temp != NULL && temp->data != key) {
         prev = temp;
