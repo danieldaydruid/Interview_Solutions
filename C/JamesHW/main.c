@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h> 
 
 double Boringness(char *str);
 void swap (float *a, float *b);
@@ -7,10 +8,18 @@ void BubbleSort(char *BoringBuffer[], int n);
 
 int main() {
     size_t m = 5;
-    char *BoringBuffer[5] = {"a", "the", "okay", "farts", "ten"};
-    BoringBuffer[6] = "fffff";
-    BubbleSort(BoringBuffer, m);
+    char **BoringBuffer;// = {"a", "the", "okay", "farts", "ten"};
+    
+    //BoringBuffer = (char *)malloc(sizeof(char) * m);
+    //BoringBuffer = malloc(sizeof(*BoringBuffer) * (m + 1));
+    BoringBuffer = malloc(5 * sizeof(char *));
     size_t i;
+
+    /*for (i = 0; i < 5; ++i)  {
+        BoringBuffer[i] = malloc( (5 + 1) * sizeof(char) );
+        strcpy(BoringBuffer[i], "ab");
+    }*/
+    BubbleSort(BoringBuffer, m);
     for(i = 0; i < m; i++) printf("%s\n", BoringBuffer[i]);
     return 0;
 }
