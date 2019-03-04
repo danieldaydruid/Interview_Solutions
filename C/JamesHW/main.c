@@ -16,7 +16,7 @@ int main() {
     strcpy(BoringBuffer[1], "the");    
     BoringBuffer[2] = malloc( (m + 1) * sizeof(char) ); 
     strcpy(BoringBuffer[2], "a");  
-    BoringBuffer[3] = malloc( (m + 1) * sizeof(char) ); 
+    BoringBuffer[3] = malloc( (m + 1) * sizeof(char) );  
     strcpy(BoringBuffer[3], "wolf");      
     BoringBuffer[4] = malloc( (m + 1) * sizeof(char) );    
     strcpy(BoringBuffer[4], "farts");  
