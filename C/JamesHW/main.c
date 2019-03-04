@@ -8,8 +8,6 @@ void BubbleSort(char *BoringBuffer[], int n);
 int main() {
     size_t m = 5;
     char *BoringBuffer[5] = {"a", "the", "okay", "farts", "ten"};
-    *BoringBuffer = malloc(m * sizeof(char *));
-    *BoringBuffer = malloc(m * sizeof(char *));
     BoringBuffer[6] = "fffff";
     BubbleSort(BoringBuffer, m);
     size_t i;
