@@ -8,7 +8,7 @@ void BubbleSort(char *BoringBuffer[], int n);
 
 int main() {
     size_t m = 5; 
-    char **BoringBuffer;  
+    char **BoringBuffer;   
     BoringBuffer = malloc(m * sizeof(char *));
     BoringBuffer[0] = malloc( (m + 1) * sizeof(char) ); 
     strcpy(BoringBuffer[0], "ten");  
