@@ -6,7 +6,7 @@ double Boringness(char *str);
 void swap (float *a, float *b); 
 void BubbleSort(char *BoringBuffer[], int n);
 
-int main() {
+int main() { 
     size_t m = 5; 
     char **BoringBuffer;   
     BoringBuffer = malloc(m * sizeof(char *));
