@@ -20,7 +20,7 @@ double Boringness(const char *str) {
     double boringness = 1.0;
     printf("%.6f\n", boringness);
     size_t i = 0;
-    while (str[i] != '\n' && str[i] != '\0') {
+    while (str[i] != '\n' && str[i] != '\0') { 
         boringness = boringness * freq[str[i] - 97];
         printf("%.6f\n", boringness);
         i++; // I'm guessing?
