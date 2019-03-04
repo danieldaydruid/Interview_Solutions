@@ -8,13 +8,19 @@ void BubbleSort(char *BoringBuffer[], int n);
 
 int main() {
     size_t m = 5;
-    char **BoringBuffer;// = {"a", "the", "okay", "farts", "ten"};
-    
-    //BoringBuffer = (char *)malloc(sizeof(char) * m);
-    //BoringBuffer = malloc(sizeof(*BoringBuffer) * (m + 1));
-    BoringBuffer = malloc(5 * sizeof(char *));
     size_t i;
-
+    char **BoringBuffer;// = {"a", "the", "okay", "farts", "ten"};
+    BoringBuffer = malloc(m * sizeof(char *));
+    BoringBuffer[0] = malloc( (m + 1) * sizeof(char) );
+    strcpy(BoringBuffer[0], "a");
+    BoringBuffer[1] = malloc( (m + 1) * sizeof(char) );
+    strcpy(BoringBuffer[1], "the");
+    BoringBuffer[2] = malloc( (m + 1) * sizeof(char) );
+    strcpy(BoringBuffer[2], "ten");
+    BoringBuffer[3] = malloc( (m + 1) * sizeof(char) );
+    strcpy(BoringBuffer[3], "wolf");
+    BoringBuffer[4] = malloc( (m + 1) * sizeof(char) );
+    strcpy(BoringBuffer[4], "farts");
     /*for (i = 0; i < 5; ++i)  {
         BoringBuffer[i] = malloc( (5 + 1) * sizeof(char) );
         strcpy(BoringBuffer[i], "ab");
