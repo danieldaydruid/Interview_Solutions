@@ -25,7 +25,7 @@ int main() {
     size_t i;
     for(i = 0; i < m; i++) printf("%s\n", BoringBuffer[i]); 
     return 0;
-} 
+}  
  
 double Boringness(char *str) {
     double freq[] = {0.08167, 0.1492, 0.2782, 0.04253, 0.12702, 0.02228, 0.02015, 0.06094,
