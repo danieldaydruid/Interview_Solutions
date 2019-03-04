@@ -1,13 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-double Boringness(char * str);
+double Boringness(char *str);
 void swap (float *a, float *b);
 void BubbleSort(char *BoringBuffer[], int n);
 
 int main() {
     size_t m = 5;
-    char *BoringBuffer[5] = {"the", "a", "okay", "farts", "ten"};
+    char *BoringBuffer[5] = {"a", "the", "okay", "farts", "ten"};
+    *BoringBuffer = malloc(m * sizeof(char *));
+    *BoringBuffer = malloc(m * sizeof(char *));
+    BoringBuffer[6] = "fffff";
     BubbleSort(BoringBuffer, m);
+    size_t i;
+    for(i = 0; i < m; i++) printf("%s\n", BoringBuffer[i]);
     return 0;
 }
 
@@ -30,8 +36,7 @@ void BubbleSort(char *BoringBuffer[], int n) {
     char* temp;
     for(i = 0; i < n - 1; i++) {
         for(j = 0; j < n - i - 1; j++) {
-            if( Boringness(BoringBuffer[j]) > Boringness(BoringBuffer[j + 1]) ) {
-                printf("\n\n\nFound\n\n\n");
+            if( Boringness(BoringBuffer[j]) < Boringness(BoringBuffer[j + 1]) ) {
                 temp = BoringBuffer[j];
                 BoringBuffer[j] = BoringBuffer[j + 1];
                 BoringBuffer[j + 1] = temp;
