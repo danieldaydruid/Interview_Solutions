@@ -22,7 +22,7 @@ int main() {
     strcpy(BoringBuffer[4], "farts"); 
   
     BubbleSort(BoringBuffer, m); 
-    size_t i; 
+    size_t i;  
     for(i = 0; i < m; i++) printf("%s\n", BoringBuffer[i]); 
     return 0; 
 }  
