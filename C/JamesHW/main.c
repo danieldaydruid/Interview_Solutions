@@ -6,9 +6,11 @@ double Boringness(char *str);
 void swap (float *a, float *b); 
 void BubbleSort(char *BoringBuffer[], int n);
 
-int main() { 
-    size_t m = 5; 
-    char **BoringBuffer;   
+int main() {
+    FILE *fp;
+    fp = fopen("/word2.txt", "r");
+    size_t m = 5;  
+    char **BoringBuffer;
     BoringBuffer = malloc(m * sizeof(char *));
     BoringBuffer[0] = malloc( (m + 1) * sizeof(char) );  
     strcpy(BoringBuffer[0], "ten");  
