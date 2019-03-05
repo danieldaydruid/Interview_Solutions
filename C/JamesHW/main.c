@@ -4,7 +4,7 @@
 
 double Boringness(char *str);
 void swap (float *a, float *b); 
-void BubbleSort(char *BoringBuffer[], int n);
+void BubbleSort(char *BoringBuffer[], int n); 
 
 int main() { 
     FILE *fp;
