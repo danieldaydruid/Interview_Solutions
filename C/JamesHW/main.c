@@ -7,7 +7,7 @@ void swap (float *a, float *b);
 void BubbleSort(char *BoringBuffer[], int n);  
 
 int main() { 
-    FILE *fp;
+    FILE *fp; 
     fp = fopen("/word2.txt", "r");
     size_t m = 5;    
     char **BoringBuffer;
