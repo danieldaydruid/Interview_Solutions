@@ -8,7 +8,7 @@ void BubbleSort(char *BoringBuffer[], int n);
 
 int main() { 
     FILE *fp; 
-    fp = fopen("/word2.txt", "r");
+    fp = fopen("/word2.txt", "r"); 
     size_t m = 5;    
     char **BoringBuffer;
     BoringBuffer = malloc(m * sizeof(char *)); 
