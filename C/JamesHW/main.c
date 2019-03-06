@@ -18,7 +18,7 @@ int main() {
         if (str == '\0') break; //Allocate strlen instead of m + 1
         BoringBuffer[iterator] = malloc( (m + 1) * sizeof(char) );
         strcpy(BoringBuffer[iterator], str); 
-        printf("%s", BoringBuffer[iterator]);             
+        printf("%s", BoringBuffer[iterator]);              
         iterator++;   
     } 
 
