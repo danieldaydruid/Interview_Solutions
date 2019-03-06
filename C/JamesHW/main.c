@@ -10,7 +10,7 @@ int main() {
     char str[256];
     FILE *fp = fopen("word2.txt", "r"); 
     size_t m = 100;    
-    char **BoringBuffer;
+    char **BoringBuffer; 
     BoringBuffer = malloc( m * sizeof(char *) );
     size_t iterator = 0;
     while (fgets(str, sizeof(str), fp)) {
