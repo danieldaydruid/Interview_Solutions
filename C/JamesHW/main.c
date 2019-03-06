@@ -14,7 +14,7 @@ int main() {
     BoringBuffer = malloc( m * sizeof(char *) );
     size_t iterator = 0;
     while (fgets(str, sizeof(str), fp)) {
-        //printf("%s", str);
+        //printf("%s", str); 
         if (str == '\0') break; //Allocate strlen instead of m + 1
         BoringBuffer[iterator] = malloc( (m + 1) * sizeof(char) );
         strcpy(BoringBuffer[iterator], str);
