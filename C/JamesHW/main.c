@@ -4,28 +4,27 @@
 
 double Boringness(char *str);
 void swap (float *a, float *b); 
-void BubbleSort(char *BoringBuffer[], int n);  
+void BubbleSort(char *BoringBuffer[], size_t n);  
 
 int main() { 
-    FILE *fp; 
-    fp = fopen("/word2.txt", "r"); 
-    size_t m = 5;    
+    char str[256];
+    FILE *fp = fopen("word2.txt", "r"); 
+    size_t m = 100;    
     char **BoringBuffer;
-    BoringBuffer = malloc(m * sizeof(char *)); 
-    BoringBuffer[0] = malloc( (m + 1) * sizeof(char) );  
-    strcpy(BoringBuffer[0], "ten");   
-    BoringBuffer[1] = malloc( (m + 1) * sizeof(char) ); 
-    strcpy(BoringBuffer[1], "the");    
-    BoringBuffer[2] = malloc( (m + 1) * sizeof(char) );   
-    strcpy(BoringBuffer[2], "a");  
-    BoringBuffer[3] = malloc( (m + 1) * sizeof(char) );  
-    strcpy(BoringBuffer[3], "wolf");       
-    BoringBuffer[4] = malloc( (m + 1) * sizeof(char) );      
-    strcpy(BoringBuffer[4], "farts");     
-    
-    BubbleSort(BoringBuffer, m);     
+    BoringBuffer = malloc( m * sizeof(char *) );
+    size_t iterator = 0;
+    while (fgets(str, sizeof(str), fp)) {
+        //printf("%s", str);
+        if (str == '\0') break; //Allocate strlen instead of m + 1
+        BoringBuffer[iterator] = malloc( (m + 1) * sizeof(char) );
+        strcpy(BoringBuffer[iterator], str);
+        printf("%s", BoringBuffer[iterator]);
+        iterator++;
+    }
+
+    BubbleSort(BoringBuffer, iterator);      
     size_t i;      
-    for(i = 0; i < m; i++) printf("%s\n", BoringBuffer[i]);   
+    for(i = 0; i < iterator; i++) printf("%s\n", BoringBuffer[i]);   
     return 0;  
 }     
  
@@ -43,8 +42,8 @@ double Boringness(char *str) {
     return boringness;
 }
 
-void BubbleSort(char *BoringBuffer[], int n) {
-    int i, j;
+void BubbleSort(char *BoringBuffer[], size_t n) {
+    size_t i, j;
     char* temp;
     for(i = 0; i < n - 1; i++) {
         for(j = 0; j < n - i - 1; j++) {
