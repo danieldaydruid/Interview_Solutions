@@ -51,7 +51,7 @@ void BubbleSort(char *BoringBuffer[], size_t n) {
                 temp = BoringBuffer[j];
                 BoringBuffer[j] = BoringBuffer[j + 1];
                 BoringBuffer[j + 1] = temp;
-            }
+            } 
         }  
     } 
     return;
