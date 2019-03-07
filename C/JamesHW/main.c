@@ -20,7 +20,7 @@ int main() {
         strcpy(BoringBuffer[iterator], str); 
         printf("%s", BoringBuffer[iterator]);                                  
         iterator++;     
-    }  
+    }   
  
     BubbleSort(BoringBuffer, iterator);       
     size_t i;       
