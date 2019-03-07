@@ -25,7 +25,7 @@ int main() {
     BubbleSort(BoringBuffer, iterator);       
     size_t i;       
     for(i = 0; i < iterator; i++) printf("%s\n", BoringBuffer[i]);   
-    return 0;  
+    return 0;   
 }     
  
 double Boringness(char *str) {  
