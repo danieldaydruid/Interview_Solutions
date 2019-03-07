@@ -53,6 +53,6 @@ void BubbleSort(char *BoringBuffer[], size_t n) {
                 BoringBuffer[j + 1] = temp;
             }
         }  
-    }
+    } 
     return;
 } 
