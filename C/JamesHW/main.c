@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<string.h> 
 
-double Boringness(char *str);  
+double Boringness(char *str);   
 void swap (float *a, float *b); 
 void BubbleSort(char *BoringBuffer[], size_t n);  
  
