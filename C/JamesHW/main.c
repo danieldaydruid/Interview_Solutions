@@ -5,7 +5,7 @@
 double Boringness(char *str);  
 void swap (float *a, float *b); 
 void BubbleSort(char *BoringBuffer[], size_t n);  
-
+ 
 int main() { 
     char str[256];
     FILE *fp = fopen("word2.txt", "r"); 
