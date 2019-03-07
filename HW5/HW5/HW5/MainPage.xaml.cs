@@ -40,5 +40,49 @@ namespace HW5
             }
              ProductsListView.ItemsSource = items;
         }
+
+        void Handle_More(object sender, System.EventArgs e)
+        {
+            var menu = (Button)sender;
+            var itemClicked = menu.CommandParameter as ProductData;
+            Navigation.PushAsync(new ItemPage(itemClicked));
+        }
+        void Handle_Prime(object sender, System.EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var itemClicked = menuItem.CommandParameter as ProductData;
+            items.Remove(itemClicked);
+            Random rand = new Random();
+            bool isPrime = true;
+            int n = rand.Next(1000000000);
+            for (int i = 2; i <= n / 2; ++i)
+            {
+                if(n % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            string myString = n.ToString();
+            if (isPrime)
+            {
+
+                DisplayAlert("Alert", myString, "It's prime!");
+            }
+            else
+            {
+
+                DisplayAlert("Alert", myString, "It's not prime!");
+            }
+
+
+        }
+
+        void Handle_Refreshing(object sender, System.EventArgs e)
+        {
+            items.Clear();
+            LoadJson();
+            ProductsListView.IsRefreshing = false;
+        }
     }
 }

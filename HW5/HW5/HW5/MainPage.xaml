@@ -8,11 +8,28 @@
     
     <StackLayout>
         
-        <ListView x:Name="ProductsListView" >
+        <ListView x:Name="ProductsListView" 
+                  IsPullToRefreshEnabled="true"
+                  Refreshing="Handle_Refreshing">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem   
+                                Text ="More"
+                                Clicked="Handle_More"
+                                CommandParameter="{Binding .}"
+                            />
+                            <MenuItem   
+                                Text ="Find a Prime Number"
+                                Clicked="Handle_Prime"
+                                IsDestructive="true"
+                                CommandParameter="{Binding .}"
+                            />
+                        </ViewCell.ContextActions>
+                            
+                            
                         <ViewCell.View>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -74,11 +91,10 @@
                                         Grid.ColumnSpan="4"
                                     />
                                 <Button 
-                                    Text="More"
+                                    Text="Pull..."
                                         Grid.Row="1"
                                         Grid.Column="4"
                                         Grid.ColumnSpan="1"
-                                        Clicked="MagicBtn_Clicked"
                                     />
                                 </Grid>
                             
