@@ -43,7 +43,7 @@ namespace HW5
 
         void Handle_More(object sender, System.EventArgs e)
         {
-            var menu = (Button)sender;
+            var menu = (MenuItem)sender;
             var itemClicked = menu.CommandParameter as ProductData;
             Navigation.PushAsync(new ItemPage(itemClicked));
         }
