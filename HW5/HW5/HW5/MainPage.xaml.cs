@@ -75,7 +75,7 @@ namespace HW5
                 DisplayAlert("Alert", myString, "It's not prime!");
             }
 
-
+ 
         }
 
         void Handle_Refreshing(object sender, System.EventArgs e)
