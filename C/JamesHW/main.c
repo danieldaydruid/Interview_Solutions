@@ -15,7 +15,7 @@ int main() {
     size_t iterator = 0;
     while (fgets(str, sizeof(str), fp)) { 
         //printf("%s", str); 
-        if (str == '\0') break; //Allocate strlen instead of m + 1 
+        if (str == '\0') break; //Allocate strlen instead of m + 1
         BoringBuffer[iterator] = malloc( (m + 1) * sizeof(char) );
         strcpy(BoringBuffer[iterator], str);  
         printf("%s", BoringBuffer[iterator]);                                   
@@ -23,8 +23,9 @@ int main() {
     }   
  
     BubbleSort(BoringBuffer, iterator);       
+
     size_t i;       
-    for(i = 0; i < iterator; i++) printf("%s\n", BoringBuffer[i]);   
+    for(i = 0; i < iterator; i++) printf("%s\n", BoringBuffer[i]);
     return 0;   
 }     
  
@@ -55,4 +56,4 @@ void BubbleSort(char *BoringBuffer[], size_t n) {
         }  
     } 
     return;
-}                                           
+}
