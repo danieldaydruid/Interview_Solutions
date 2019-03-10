@@ -24,7 +24,7 @@ int main() {
  
     BubbleSort(BoringBuffer, iterator);       
  
-    size_t i;       
+    size_t i;        
     for(i = 0; i < iterator; i++) printf("%s\n", BoringBuffer[i]); 
     return 0;   
 }     
