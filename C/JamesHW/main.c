@@ -19,7 +19,7 @@ int main() {
         BoringBuffer[iterator] = malloc( (m + 1) * sizeof(char) );
         strcpy(BoringBuffer[iterator], str);  
         printf("%s", BoringBuffer[iterator]);                                   
-        iterator++;     
+        iterator++;      
     }   
  
     BubbleSort(BoringBuffer, iterator);       
