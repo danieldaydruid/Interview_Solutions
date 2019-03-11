@@ -12,7 +12,7 @@ int main() {
     size_t m = 100;    
     char **BoringBuffer;  
     BoringBuffer = malloc( m * sizeof(char *) ); 
-    size_t iterator = 0;
+    size_t iterator = 0; 
     while (fgets(str, sizeof(str), fp)) { 
         //printf("%s", str); 
         if (str == '\0') break; //Allocate strlen instead of m + 1
