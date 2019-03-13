@@ -24,6 +24,6 @@ def merge(lists):
                           element_ind + 1)
             heapq.heappush(heap, next_tuple)
     return merged_list
-#End instructor solution
+#End instructor solution 
 print(merge([[10, 15, 30], [12, 15, 20], [17, 20, 32]]))
 '''
