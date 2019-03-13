@@ -3,7 +3,7 @@ return a new sorted merged list from K sorted lists, each with size N.
 
 [[10, 15, 30], [12, 15, 20], [17, 20, 32]]
 '''
-
+'''
 #Instructor solution
 import heapq
 
@@ -26,3 +26,4 @@ def merge(lists):
     return merged_list
 #End instructor solution
 print(merge([[10, 15, 30], [12, 15, 20], [17, 20, 32]]))
+'''
