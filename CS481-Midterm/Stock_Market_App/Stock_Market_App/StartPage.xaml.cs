@@ -13,8 +13,9 @@ using globals;
 namespace Stock_Market_App {
     public partial class StartPage : ContentPage {
         public string API_Key = "KCDTWL8NI22FMT6M";
-        DayData aDay = new DayData();
+        DayData Single_Day = new DayData();
         double MAXIMUM = 99999.00, MINIMUM = 00000.00;
+        string[] ThisIsTheMonth = { "NULL", "Januray", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         public StartPage() {
             InitializeComponent();
         }
@@ -33,12 +34,14 @@ namespace Stock_Market_App {
                 StockAppVars.ListofDates = Stock_Info.TimeSeriesDaily.Keys.ToList();
                 List<DayData> DaysList = new List<DayData>();
                 for (int i = 0; i < StockAppVars.ListOfStocks.Count; i++) {
-                    aDay.date = StockAppVars.ListofDates[i];
-                    aDay.high = double.Parse(StockAppVars.ListOfStocks[i].The2High);
-                    aDay.low = double.Parse(StockAppVars.ListOfStocks[i].The3Low);
-                    aDay.close = double.Parse(StockAppVars.ListOfStocks[i].The4Close);
-                    DaysList.Add(aDay);
-                    aDay = new DayData();
+                    //Single_Day.date = StockAppVars.ListofDates[i];
+                    Single_Day.date = StockAppVars.ListofDates[i].ToString();
+                    Single_Day.date = ThisIsTheMonth[Convert.ToInt32( Single_Day.date.Substring(6, 1))] + " " + Single_Day.date.Substring(8, 2) + ", " + Single_Day.date.Substring(0, 4);
+                    Single_Day.high = double.Parse(StockAppVars.ListOfStocks[i].The2High);
+                    Single_Day.low = double.Parse(StockAppVars.ListOfStocks[i].The3Low);
+                    Single_Day.close = double.Parse(StockAppVars.ListOfStocks[i].The4Close);
+                    DaysList.Add(Single_Day);
+                    Single_Day = new DayData();
                 }
                 historyListView.ItemsSource = DaysList;
                 Populate();
