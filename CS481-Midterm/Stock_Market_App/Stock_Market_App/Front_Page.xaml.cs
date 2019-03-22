@@ -7,21 +7,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-using StockDataNamespace;
+using Stock_Info;
 using DayModel;
-using globals;
+using stock_app_variables;
 namespace Stock_Market_App {
-    public partial class StartPage : ContentPage {
+    public partial class Front_Page : ContentPage {
         public string API_Key = "KCDTWL8NI22FMT6M";
         DayData Single_Day = new DayData();
+        string temp;
         double MAXIMUM = 99999.00, MINIMUM = 00000.00;
-        string[] ThisIsTheMonth = { "NULL", "Januray", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-        public StartPage() {
+        string[] ThisIsTheMonth = { "Januray", "Januray", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        public Front_Page() {
             InitializeComponent();
         }
         async void Click_For_Get(object sender, EventArgs e) {
             string U_Input;
-            U_Input = stockEntry.Text;
+            U_Input = Enter_Stock.Text;
             string API_End = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY" + "&symbol=" + U_Input + "&apikey=" + API_Key;
             Uri StockAPI = new Uri(API_End);
             HttpClient client = new HttpClient();
@@ -36,10 +37,11 @@ namespace Stock_Market_App {
                 for (int i = 0; i < StockAppVars.ListOfStocks.Count; i++) {
                     //Single_Day.date = StockAppVars.ListofDates[i];
                     Single_Day.date = StockAppVars.ListofDates[i].ToString();
-                    Single_Day.date = ThisIsTheMonth[Convert.ToInt32( Single_Day.date.Substring(6, 1))] + " " + Single_Day.date.Substring(8, 2) + ", " + Single_Day.date.Substring(0, 4);
-                    Single_Day.high = double.Parse(StockAppVars.ListOfStocks[i].The2High);
-                    Single_Day.low = double.Parse(StockAppVars.ListOfStocks[i].The3Low);
-                    Single_Day.close = double.Parse(StockAppVars.ListOfStocks[i].The4Close);
+                    temp = Single_Day.date.Substring(4, 4).Trim('-');
+                    Single_Day.date = ThisIsTheMonth[Convert.ToInt32(temp)] + " " + Single_Day.date.Substring(8, 2) + ", " + Single_Day.date.Substring(0, 4);
+                    Single_Day.high = double.Parse(StockAppVars.ListOfStocks[i].The_High);
+                    Single_Day.low = double.Parse(StockAppVars.ListOfStocks[i].The_Low);
+                    Single_Day.close = double.Parse(StockAppVars.ListOfStocks[i].The_Close);
                     DaysList.Add(Single_Day);
                     Single_Day = new DayData();
                 }
@@ -51,8 +53,8 @@ namespace Stock_Market_App {
         }
         void RetrieveHigh_RetrieveLow() {
             for (int i = 0; i < StockAppVars.ListOfStocks.Count; i++) {
-                if (double.Parse(StockAppVars.ListOfStocks[i].The2High) >= MINIMUM) MINIMUM = double.Parse(StockAppVars.ListOfStocks[i].The2High);
-                if (double.Parse(StockAppVars.ListOfStocks[i].The3Low) <= MAXIMUM) MAXIMUM = double.Parse(StockAppVars.ListOfStocks[i].The3Low);
+                if (double.Parse(StockAppVars.ListOfStocks[i].The_High) >= MINIMUM) MINIMUM = double.Parse(StockAppVars.ListOfStocks[i].The_High);
+                if (double.Parse(StockAppVars.ListOfStocks[i].The_Low) <= MAXIMUM) MAXIMUM = double.Parse(StockAppVars.ListOfStocks[i].The_Low);
             }
             lowestLabel.Text = MAXIMUM.ToString();
             highestLabel.Text = MINIMUM.ToString();

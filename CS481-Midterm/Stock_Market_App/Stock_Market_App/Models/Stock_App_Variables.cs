@@ -1,6 +1,5 @@
-﻿namespace globals
-{
-    using StockDataNamespace;
+﻿namespace stock_app_variables {
+    using Stock_Info;
     using System.Collections.Generic;
 
     public static class StockAppVars {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Stock_Market_App.StartPage"
+             x:Class="Stock_Market_App.Front_Page"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     ios:Page.UseSafeArea="true">
     <ContentPage.Content>
@@ -26,10 +26,10 @@
                             <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                         <Entry
-                            x:Name="stockEntry"
+                            x:Name="Enter_Stock"
                             Grid.Column="1"
                             Grid.Row="0"
-                            Grid.ColumnSpan="3"
+                            Grid.ColumnSpan="1"
                             />
                         <Button
                             x:Name="getStockButton"
@@ -60,7 +60,7 @@
                             />
                         <Label
                             x:Name="lowestLabel"
-                            TextColor="Fuchsia"
+                            TextColor="Red"
                         FontAttributes="Bold"
                             Grid.Row="1"
                             Grid.Column="3"
@@ -93,12 +93,14 @@
                                                             HorizontalTextAlignment="Center"
                                                             VerticalTextAlignment="Center"
                                                             Text="{Binding date}"
+                                                            Font = "Helvetica-Oblique"
                                                             FontSize="Small"
                                                             />
                                                          <Label
                                                             Grid.Row="1"
                                                             Grid.Column="0"
                                                             Text="High"
+                                                            Font="Bold,20"
                                              HorizontalTextAlignment="Center"
                                                             FontSize="Small"
                                                          />
@@ -106,6 +108,7 @@
                                                             Grid.Row="1"
                                                             Grid.Column="1"
                                                             Text="Low"
+                                                            Font="Bold,20"
                                              HorizontalTextAlignment="Center"
                                                             FontSize="Small"
                                                          />
@@ -113,6 +116,7 @@
                                                             Grid.Row="1"
                                                             Grid.Column="2"
                                                             Text="Close"
+                                                            Font="Bold,20"
                                              HorizontalTextAlignment="Center"
                                                             FontSize="Small"
                                                          />
@@ -121,6 +125,7 @@
                                                             Grid.Row="2"
                                                             Grid.Column="0"
                                                             Text="{Binding high}"
+                                                            TextColor="Lime"
                                              HorizontalTextAlignment="Center"
                                                             FontSize="Small"
                                                          />
@@ -129,6 +134,7 @@
                                                             Grid.Row="2"
                                                             Grid.Column="1"
                                                             Text="{Binding low}"
+                                                            TextColor="Red"
                                              HorizontalTextAlignment="Center"
                                                             FontSize="Small"
                                                          />

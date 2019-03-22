@@ -6,7 +6,7 @@
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     ios:Page.UseSafeArea="true">
     
-    <local:StartPage Title="Main"/>
-    <local:ChartsPage Title="Charts"/>
+    <local:Front_Page Title="Main"/>
+    <local:Chart_Page Title="Charts"/>
     
 </TabbedPage>

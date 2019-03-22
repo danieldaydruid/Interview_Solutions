@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using StockDataNamespace;
+using Stock_Info;
 using DayModel;
 using System.Collections.Generic;
 
