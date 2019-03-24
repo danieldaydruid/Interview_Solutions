@@ -26,4 +26,4 @@ def merge(lists):
     return merged_list
 #End instructor solution 
 print(merge([[10, 15, 30], [12, 15, 20], [17, 20, 32]]))
-'''                    
+'''                     
